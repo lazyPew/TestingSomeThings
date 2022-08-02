@@ -6,9 +6,11 @@ void OldestClass::printString() const{
 }
 
 TestingClass::TestingClass()
-{}
+{
+
+}
 
 void TestingClass::testFunction(){
-    printString(); 
+    printString();
 }
 
