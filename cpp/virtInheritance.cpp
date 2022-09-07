@@ -1,16 +1,16 @@
 #include <iostream>
 #include "virtInheritance.h"
 
-void OldestClass::printString() const{
+void OldestClass::printString(){
     std::cout << "string from oldest class, name is " << _name << std::endl;
 }
 
-TestingClass::TestingClass()
+NeededClass::NeededClass()
 {
 
 }
 
-void TestingClass::testFunction(){
+void NeededClass::testFunction(){
     printString();
 }
 

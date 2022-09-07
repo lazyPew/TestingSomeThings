@@ -1,5 +1,4 @@
 #include "includeFile.h"
-
 using namespace std;
 
 int option = -1;
@@ -9,13 +8,17 @@ void chooseOption(int);
 
 int main(){
 
+    int8_t i1 = -1;
+    int i2 = -1;
+    cout << sizeof(i1) << endl;
+    cout << sizeof(i2) << endl;
     chooseOption(option); 
     return 0;
 }
 
 
 void doOption(int option){
-    TestingClass test = TestingClass();
+    NeededClass test = NeededClass();
     switch(option){
         case 1:
             test.testFunction();
@@ -28,6 +31,9 @@ void doOption(int option){
             break;
         case 4:
             
+            break;
+        case 5:
+            typesOfCast();
             break;
         case 0:
             break;
@@ -42,6 +48,7 @@ void chooseOption(int option){
                 << "2) Test Factorial\n"
                 << "3) Test std::map and std::unordered_map\n"
                 << "4) Test binary numbers\n"
+                << "5) Test casts\n"
                 << "0) Exit\n";
             cin >> option;
             if (!cin.fail()) {
