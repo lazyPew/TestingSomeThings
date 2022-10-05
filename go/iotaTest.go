@@ -17,7 +17,7 @@ const (
 	i3 = iota + 2
 )
 
-func main() {
+func IotaTest() {
 	fmt.Println("a = ", a)
 	fmt.Println("b = ", b)
 	fmt.Println("c = ", c)

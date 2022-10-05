@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func FibonacciPrintWithScan() {
 	first := 0
 	second := 1
 	var count, numb int

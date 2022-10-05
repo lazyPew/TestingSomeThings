@@ -1,8 +1,6 @@
 package main
 
-import "fmt"
-
-func fibonacci(n int) int {
+func Fibonacci(n int) int {
 	first := 0
 	second := 1
 	var count int
@@ -10,10 +8,4 @@ func fibonacci(n int) int {
 		first, second = second, (first + second)
 	}
 	return second
-}
-
-func main() {
-	var numb int
-	fmt.Scan(&numb)
-	fmt.Println(fibonacci(numb))
 }

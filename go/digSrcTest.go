@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func main() {
+func DigSrc() {
 	var numb string
 	fmt.Println("start")
 	var result int
