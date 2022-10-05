@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-type Person struct {
+type Person1 struct {
 	Name    string
 	Address Address
 }
@@ -15,17 +15,17 @@ type Address struct {
 	Zip    string
 }
 
-func (p *Person) Talk() {
+func (p *Person1) Talk() {
 	fmt.Println("Hi, my name is", p.Name)
 }
 
-func (p *Person) Location() {
+func (p *Person1) Location() {
 	fmt.Println("Im at", p.Address.Number, p.Address.Street, p.Address.City, p.Address.State, p.Address.Zip)
 }
 
 type Citizen struct {
 	Country string
-	Person  // анонимное поле без имени
+	Person1 // анонимное поле без имени
 }
 
 func (c *Citizen) Nationality() {
@@ -37,7 +37,7 @@ func (c *Citizen) Talk() {
 }
 
 func main() {
-	p := Person{Name: "Steve"}
+	p := Person1{Name: "Steve"}
 	p.Address = Address{Number: "13", Street: "Main"}
 	p.Address.City = "Gotham"
 	p.Address.State = "NY"

@@ -2,16 +2,16 @@ package main
 
 import "fmt"
 
-type Human interface {
+type Human2 interface {
 	Talk()
 }
 
-type Person struct {
+type Person2 struct {
 	Name    string
 	Address Address
 }
 
-type Address struct {
+type Address2 struct {
 	Number string
 	Street string
 	City   string
@@ -19,30 +19,30 @@ type Address struct {
 	Zip    string
 }
 
-func (p *Person) Talk() {
+func (p *Person2) Talk() {
 	fmt.Println("Hi, my name is", p.Name)
 }
 
-func (p *Person) Location() {
+func (p *Person2) Location() {
 	fmt.Println("I am at", p.Address.Number, p.Address.Street, p.Address.City, p.Address.State, p.Address.Zip)
 }
 
-type Citizen struct {
+type Citizen2 struct {
 	Country string
-	Person
+	Person2
 }
 
-func (c *Citizen) Nationality() {
+func (c *Citizen2) Nationality() {
 	fmt.Println(c.Name, "is a citizen of", c.Country)
 }
 
-func SpeakTo(h Human) {
+func SpeakTo(h Human2) {
 	h.Talk()
 }
 
 func main() {
-	p := &Person{Name: "Dave"}
-	c := &Citizen{Person: Person{Name: "Steve"}, Country: "America"}
+	p := &Person2{Name: "Dave"}
+	c := &Citizen2{Person2: Person2{Name: "Steve"}, Country: "America"}
 
 	SpeakTo(p)
 	SpeakTo(c)
