@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func Switchtest() {
+func SwitchTest() {
 
 	v := 42
 	switch v {
