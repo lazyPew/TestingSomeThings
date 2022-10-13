@@ -21,10 +21,11 @@ text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
 func main() {
 	text, _ := bufio.NewReader(os.Stdin).ReadString('\n')
 	lenText := utf8.RuneCountInString(text) - 1
-	fmt.Println(lenText)
-	fmt.Println((text[lenText]))
+	runeText := []rune(text)
+	fmt.Println(runeText[lenText-1])
+	fmt.Println('.')
 Out:
-	for i, s := range text {
+	for i, s := range runeText {
 		switch i {
 		case 0:
 			if unicode.IsLower(s) {
@@ -36,12 +37,9 @@ Out:
 				fmt.Println("Wrong2")
 				fmt.Println((s))
 				break Out
+			} else {
+				fmt.Println("Right")
 			}
-		case lenText:
-			fmt.Println("Right")
 		}
-		// if string(s) != "\n" {
-		// 	fmt.Println(string(s))
-		// }
 	}
 }

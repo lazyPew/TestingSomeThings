@@ -55,9 +55,11 @@ func main() {
 	fmt.Println(unicode.IsUpper('a'))
 	fmt.Println(unicode.IsLower('a'))
 	fmt.Println(unicode.Is(unicode.Latin, 'a'))
-	fmt.Println(unicode.IsSpace('a'))
+	fmt.Println(unicode.Is(unicode.Latin, '1'))
+	fmt.Println(unicode.Is(unicode.Latin, 'б'))
 	fmt.Println()
 
+	fmt.Println(unicode.IsSpace('a'))
 	fmt.Println(unicode.IsSpace('\t'))
 	fmt.Println(unicode.IsSpace('\v'))
 	fmt.Println(unicode.IsSpace('\f'))
