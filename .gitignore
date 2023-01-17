@@ -3,3 +3,4 @@
 !*.*
 .vscode/
 /python/venv/*
+/cpp/main

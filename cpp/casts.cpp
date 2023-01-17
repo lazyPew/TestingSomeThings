@@ -12,10 +12,10 @@ class TestCast2{
 
 };
 
-static void typesOfCast(){
-    return;
-    // const_cast<>();
-    // static_cast<>();
-    // dynamic_cast<>();
-    // reinterpret_cast<>();
-}
+// void typesOfCast(){
+//     return;
+//     // const_cast<>();
+//     // static_cast<>();
+//     // dynamic_cast<>();
+//     // reinterpret_cast<>();
+// }

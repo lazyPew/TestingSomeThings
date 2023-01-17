@@ -1,4 +1,4 @@
-#include "includeFile.h"
+#include "includeFile.hpp"
 using namespace std;
 
 int option = -1;
@@ -33,7 +33,10 @@ void doOption(int option){
             
             break;
         case 5:
-            typesOfCast();
+            // typesOfCast();
+            break;
+        case 6:
+            Transformer::start(200);
             break;
         case 0:
             break;
