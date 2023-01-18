@@ -36,7 +36,7 @@ void doOption(int option){
             // typesOfCast();
             break;
         case 6:
-            Transformer::start(200);
+            Transformer::start();
             break;
         case 0:
             break;
