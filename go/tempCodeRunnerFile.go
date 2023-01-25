@@ -1,1 +1,1 @@
-utf8.RuneCountInString(strR)
+	rd := bufio.NewReader(file)

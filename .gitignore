@@ -4,3 +4,4 @@
 .vscode/
 /python/venv/*
 /cpp/main
+/go/exercises/fileTask1/task
