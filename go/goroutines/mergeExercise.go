@@ -220,3 +220,41 @@ func merge2Channels4(fn func(int) int, in1 <-chan int, in2 <-chan int, out chan<
 		}
 	}(wg)
 }
+
+// ========================= method 5 =========================
+
+func merge2Channels5(fn func(int) int, in1 <-chan int, in2 <-chan int, out chan<- int, n int) {
+
+	wg := &sync.WaitGroup{}
+	mu := &sync.Mutex{}
+	sl1 := make([]int, n)
+	sl2 := make([]int, n)
+
+	wg.Add(n * 2)
+	for i := 0; i < n; i++ {
+		go func(i int) {
+			//defer wg.Done
+			mu.Lock()
+			sl1[i] = <-in1
+			sl2[i] = <-in2
+			mu.Unlock()
+
+			go func(i int) {
+				defer wg.Done()
+				sl1[i] = fn(sl1[i])
+			}(i)
+			go func(i int) {
+				defer wg.Done()
+				sl2[i] = fn(sl2[i])
+			}(i)
+
+		}(i)
+	}
+
+	go func() {
+		wg.Wait()
+		for i := 0; i < n; i++ {
+			out <- sl1[i] + sl2[i]
+		}
+	}()
+}
